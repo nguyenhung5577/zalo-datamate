@@ -28,16 +28,18 @@ The rules were written from the training set, and from the rulebooks and questio
 
 The adapter is trained on the training split only, for the form-filling step. The code still computes every answer.
 
-1. `python -m scripts.build_labels` writes `results/training/slots-dev.jsonl` from the odd training shops.
+1. `python -m scripts.build_labels --include-held-out --output results/training/slots-v3-all.jsonl` writes the labels from all 30 training shops. Without `--include-held-out` it reads only the 15 odd shops (`slots-v3-dev.jsonl`), so the even shops stay unseen for a held-out check.
    - A label is the slots that pass `check_evidence` and give the reference answer of `train/answers.jsonl`.
    - Candidates are the model's own earlier replies and slots built by code.
    - A question whose words no form fits is labelled `other`.
-2. `python -m scripts.train_slots --model <Qwen/Qwen3-14B weights> --output results/training/lora-2` trains the adapter.
-   - Packages: `requirements-train.txt`, on one 80 GB GPU, about 45 minutes on an H100.
-   - Settings: rank 16 on every linear layer, 2 epochs, lr 1e-4, loss on the reply only.
-3. `python convert_lora_to_gguf.py --outtype f16 --base <Qwen3-14B config> --outfile models/lora/slots-lora-2.gguf results/training/lora-2` converts it. The script is from llama.cpp b11895.
+2. `python -m scripts.train_slots --data results/training/slots-v3-all.jsonl --model <Qwen/Qwen3-14B weights> --output results/training/lora-3` trains the adapter.
+   - Packages: `requirements-train.txt`, on one GPU with at least 40 GB.
+   - Settings: rank 16 on every linear layer, 2 epochs (614 optimizer steps), lr 1e-4, loss on the reply only.
+   - It checkpoints every 40 steps and resumes with `--checkpoint`. `--leave-out <shop type>` drops one shop type from the labels for a held-out fold.
+   - `colab/train_slots_any.ipynb` runs the same steps on Colab, for Qwen3-14B or Gemma 4 12B.
+3. `python convert_lora_to_gguf.py --outtype f16 --base <Qwen3-14B config> --outfile models/lora/slots-lora-3.gguf results/training/lora-3` converts it. The script is from llama.cpp b11895.
 
-`scripts/fair_test.py` checked it on the 15 even training shops, which were not used for labels.
+**Held-out check.** An earlier adapter trained on the odd shops only scored 1364 right / 1 wrong on the 1540 even-shop questions with the rules off (1321 / 2 in chat shorthand), measured with `scripts/fair_test.py`. That run had never seen those shops.
 
 ## Model comparison: Qwen3-14B against Gemma 4 12B
 
