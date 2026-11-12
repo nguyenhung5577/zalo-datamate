@@ -1,0 +1,283 @@
+{
+ "built_from": "train",
+ "questions": 3000,
+ "min_train_hits": 5,
+ "rules": {
+  "direct.opinion": {
+   "answered": 7,
+   "used": 7
+  },
+  "direct.outside_data": {
+   "answered": 14,
+   "used": 14
+  },
+  "direct.price_change": {
+   "answered": 84,
+   "used": 84
+  },
+  "direct.buy_price": {
+   "answered": 62,
+   "used": 62
+  },
+  "direct.series": {
+   "answered": 22,
+   "used": 22
+  },
+  "direct.best_day": {
+   "answered": 124,
+   "used": 124
+  },
+  "direct.best_month": {
+   "answered": 16,
+   "used": 16
+  },
+  "direct.rulebook_superlative": {
+   "answered": 0,
+   "used": 0
+  },
+  "direct.drug": {
+   "answered": 91,
+   "used": 91
+  },
+  "direct.product_units": {
+   "answered": 139,
+   "used": 139
+  },
+  "direct.product_revenue": {
+   "answered": 105,
+   "used": 105
+  },
+  "direct.days_over": {
+   "answered": 20,
+   "used": 20
+  },
+  "direct.orders_over": {
+   "answered": 26,
+   "used": 26
+  },
+  "direct.customers_over": {
+   "answered": 36,
+   "used": 36
+  },
+  "direct.items_over": {
+   "answered": 18,
+   "used": 18
+  },
+  "direct.units_total": {
+   "answered": 58,
+   "used": 58
+  },
+  "direct.top_items": {
+   "answered": 86,
+   "used": 86
+  },
+  "direct.debt_age": {
+   "answered": 13,
+   "used": 13
+  },
+  "direct.top_debtors": {
+   "answered": 19,
+   "used": 19
+  },
+  "direct.customer_debt": {
+   "answered": 20,
+   "used": 20
+  },
+  "direct.debtor_count": {
+   "answered": 17,
+   "used": 17
+  },
+  "direct.plain_total": {
+   "answered": 661,
+   "used": 661
+  },
+  "direct.revenue_growth": {
+   "answered": 118,
+   "used": 118
+  },
+  "direct.purchases_spoken": {
+   "answered": 40,
+   "used": 40
+  },
+  "direct.months_named": {
+   "answered": 23,
+   "used": 23
+  },
+  "direct.group_totals": {
+   "answered": 84,
+   "used": 84
+  },
+  "direct.two_values": {
+   "answered": 26,
+   "used": 26
+  },
+  "direct.top_customer": {
+   "answered": 40,
+   "used": 40
+  },
+  "direct.same_days_growth": {
+   "answered": 56,
+   "used": 56
+  },
+  "direct.unsold": {
+   "answered": 34,
+   "used": 34
+  },
+  "direct.not_recorded": {
+   "answered": 31,
+   "used": 31
+  },
+  "common.cancelled": {
+   "answered": 239,
+   "used": 239
+  },
+  "common.average": {
+   "answered": 169,
+   "used": 169
+  },
+  "common.shift_gap": {
+   "answered": 24,
+   "used": 24
+  },
+  "common.debt_total": {
+   "answered": 13,
+   "used": 13
+  },
+  "common.debt_collected": {
+   "answered": 34,
+   "used": 34
+  },
+  "common.filtered": {
+   "answered": 81,
+   "used": 81
+  },
+  "common.top_customers": {
+   "answered": 46,
+   "used": 46
+  },
+  "common.sized": {
+   "answered": 9,
+   "used": 9
+  },
+  "common.group_money": {
+   "answered": 50,
+   "used": 50
+  },
+  "common.tier_money": {
+   "answered": 42,
+   "used": 42
+  },
+  "common.price_on_day": {
+   "answered": 63,
+   "used": 63
+  },
+  "common.rounds": {
+   "answered": 16,
+   "used": 16
+  },
+  "common.split_orders": {
+   "answered": 0,
+   "used": 0
+  },
+  "common.delivered": {
+   "answered": 0,
+   "used": 0
+  },
+  "common.due_orders": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.repair_jobs": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.book_debts": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.phone_averages": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.phone_warranty_sold": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.milk_brand": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.repair": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.installments": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.phone_warranty": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.trade_in": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.customer_pays": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.phones": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.fees": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.sizes": {
+   "answered": 0,
+   "used": 0
+  },
+  "books.new_members": {
+   "answered": 0,
+   "used": 0
+  },
+  "ledgers.gross_profit": {
+   "answered": 17,
+   "used": 17
+  },
+  "ledgers.staff": {
+   "answered": 17,
+   "used": 17
+  },
+  "ledgers.supplier": {
+   "answered": 7,
+   "used": 7
+  },
+  "ledgers.tet": {
+   "answered": 5,
+   "used": 5
+  },
+  "ledgers.expiry": {
+   "answered": 13,
+   "used": 13
+  },
+  "ledgers.import_minus_sold": {
+   "answered": 4,
+   "used": 4
+  },
+  "ledgers.stock_value": {
+   "answered": 5,
+   "used": 5
+  },
+  "ledgers.out_of_stock": {
+   "answered": 1,
+   "used": 1
+  },
+  "ledgers.stock_left": {
+   "answered": 54,
+   "used": 54
+  }
+ }
+}

@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+.cache/
+.idea/
+.vscode/
+*.log
+
+# Competition data, model weights, runtimes and run outputs stay out of git
+/train/
+/public_test/
+/models/**/*.gguf
+/models/qwen3-14b/
+/.runtime/
+/.runtime-cuda/
+/results/
+*.jsonl

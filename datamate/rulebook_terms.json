@@ -1,0 +1,174 @@
+{
+"Đơn bị huỷ": [
+"khong"
+],
+"Tỉ lệ đơn huỷ trong kỳ": [
+"2",
+"moi don dat trong ky",
+"moi trang thai"
+],
+"Ca sáng, ca chiều": [
+"00",
+"06",
+"13",
+"14",
+"21",
+"59",
+"ca sang"
+],
+"Tết năm Y, dịp Tết, mùa Tết": [
+"1",
+"10",
+"23",
+"23 thang chap",
+"het",
+"mung 10 thang gieng",
+"so voi truoc tet"
+],
+"Bán chạy": [
+"ban chay nhat",
+"ban duoc nhieu nhat",
+"ban nhieu nhat",
+"hot nhat",
+"so luong quy ve don vi co ban"
+],
+"Hàng lời nhất": [
+"5",
+"tong lai gop"
+],
+"Nhân viên bán giỏi nhất": [
+"1",
+"doanh thu"
+],
+"Khách trung thành nhất": [
+"nhieu ngay co mua nhat"
+],
+"Khách sộp nhất": [
+"3",
+"gia tri trung binh mot don",
+"tu 3 don tro len"
+],
+"Khách hay đổi ý nhất": [
+"nhieu don huy nhat"
+],
+"Mặt hàng được ưa chuộng nhất": [
+"nhieu don nhat"
+],
+"Nhân viên, thợ chăm chỉ nhất": [
+"nhieu ngay lam viec nhat"
+],
+"Ngày đắt khách nhất": [
+"nhieu don nhat"
+],
+"Giờ cao điểm": [
+"1",
+"gio bat dau khung",
+"mot gio tron"
+],
+"Đơn được tính vào nợ": [
+"don tra hang van tinh"
+],
+"Nợ một đơn tại ngày X": [
+"0",
+"con no > 0",
+"gom phi giao",
+"tong don"
+],
+"Nợ theo khách": [
+"3",
+"khach le",
+"tong no"
+],
+"Đơn COD, đơn bán qua sàn TMĐT": [
+"khong phai khach no"
+],
+"Tuổi nợ": [
+"0",
+"1",
+"ngay dat"
+],
+"Nợ thêm, trả nợ, thu nợ trong kỳ": [
+"ghi no",
+"no them",
+"sau ngay mua",
+"tra no / thu no"
+],
+"Tiền nhập hàng trong kỳ": [
+"ngay phieu",
+"nhap dau ky"
+],
+"Nhà cung cấp chính": [
+"nhieu phieu nhap nhat"
+],
+"Nhập trừ bán, chênh nhập và bán": [
+"1",
+"ban"
+],
+"Giá trị hàng tồn kho": [
+"gia von mot don vi co ban ghi trong danh muc hang",
+"het hom nay"
+],
+"Mặt hàng hết hàng cuối ngày": [
+"0",
+"het ngay",
+"mua ve de ban"
+],
+"Mặt hàng không bán được trong kỳ (ế)": [
+"1",
+"da tung ban truoc ky"
+],
+"Hiệu ứng tăng giá": [
+"n ngay ke tu d",
+"n ngay ngay truoc d"
+],
+"Lãi gộp": [
+"1",
+"gia von ghi tren dong ban",
+"mot don vi ban"
+],
+"Lãi ròng một tháng": [
+"moi khoan"
+],
+"Size M, size L": [
+"khong phan biet hoa thuong"
+],
+"Thuốc kê đơn": [
+"hang khong ke don",
+"thuoc ke don"
+],
+"Hàng hết hạn trong N ngày tới": [
+"con ton",
+"tien von"
+],
+"Doanh thu theo hoạt chất": [
+"1",
+"dung nhu vay",
+"mot loai rieng"
+],
+"Giao nhiều đợt": [
+"moi dot cua moi don tinh mot dot",
+"so dot giao trong thang x"
+],
+"Số sữa, size bỉm": [
+"bim ta"
+],
+"Khách thành viên mới trong tháng": [
+"ngay dang ky"
+],
+"Lượt xe, phiếu": [
+"co thu tien",
+"mot luot xe",
+"so phieu, so luot xe"
+],
+"Thu máy cũ": [
+"1",
+"khach phai tra",
+"khong"
+],
+"Trả góp": [
+"4",
+"ghi no",
+"qua han",
+"truoc"
+]
+}

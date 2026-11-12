@@ -1,0 +1,6 @@
+# Training only (scripts/train_slots.py), run on a CUDA GPU with PyTorch 2.8; inference needs none of this.
+transformers==4.56.2
+peft==0.17.1
+accelerate==1.10.1
+safetensors
+sentencepiece
