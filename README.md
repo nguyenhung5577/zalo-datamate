@@ -39,6 +39,36 @@ The adapter is trained on the training split only, for the form-filling step. Th
 
 `scripts/fair_test.py` checked it on the 15 even training shops, which were not used for labels.
 
+## Model comparison: Qwen3-14B against Gemma 4 12B
+
+Gemma 4 12B (`google/gemma-4-12B-it`, Q8_0 GGUF) was evaluated as an alternative base model under the same 15B budget. With a rank-16 LoRA (65.6M) it totals 12.09B parameters. The comparison uses the fair sets of `scripts/fair_test.py`: 1540 questions from the 15 even training shops, as asked (clean), in chat shorthand (noisy) and with common synonyms (para). Each cell is right / wrong, with penalized accuracy.
+
+**Base models, no adapter, rules off (clean):**
+
+| Model | Right / wrong | Penalized accuracy |
+|---|---|---|
+| Qwen3-14B | 1353 / 7 | 0.874 |
+| Gemma 4 12B | 1409 / 13 | 0.906 |
+| Both, answering only where they agree | 1322 / 0 | 0.858 |
+
+The two-model agreement gives no wrong answers, but it needs about 26B parameters, so it cannot be shipped.
+
+**With a LoRA adapter, rules off.** Both adapters were trained with the same labels and recipe (`colab/train_slots_any.ipynb`, `BASE=...`).
+
+| Set | Gemma 4 12B + LoRA | Qwen3-14B + LoRA |
+|---|---|---|
+| clean | 1419 / 4, 0.919 | 1430 / 9, 0.923 |
+| noisy | 1385 / 2, 0.898 | 1398 / 5, 0.905 |
+| para | 1396 / 3, 0.905 | 1407 / 5, 0.910 |
+
+- **Where Qwen's lead comes from:** almost all of it is the SQL fallback, which answers more questions with Qwen but also makes most of its wrong answers. On noisy, the fallback scored 33 / 3 with Qwen against 19 / 0 with Gemma. On the slot form alone, the two models are level (noisy 1365 / 1 against 1366 / 0).
+- **Full pipeline, rules first** (replayed from the saved model replies, without the SQL fallback):
+  - noisy: Qwen 1514 / 0, Gemma 1507 / 0;
+  - para: Qwen 1520 / 0, Gemma 1517 / 0.
+- **Decision:** keep Qwen3-14B. Gemma is the more cautious model, but the shipped pipeline already reaches 0 wrong answers with Qwen, and Qwen answers more.
+- **Caveat:** both adapters saw every training shop, so these numbers compare the two models with each other. They do not measure performance on new shop types.
+- **Rewrite guards:** the error analysis of these runs also produced new guards in `datamate/rewrite.py`. For example, "dt" (doanh thu, revenue) must not be expanded to "điện thoại" (phone) or "đơn hàng" (orders).
+
 ## Build and run
 
 The GGUF must be at `models/qwen3-14b/` and the adapter at `models/lora/` before building. `BASE_IMAGE` is `python:3.12-slim` unless the organizers' guideline prescribes another.
